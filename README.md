@@ -5,7 +5,7 @@
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/spmeesseman.svn-scm-ext.svg)](https://marketplace.visualstudio.com/items?itemName=spmeesseman.svn-scm-ext)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Greenkeeper badge](https://badges.greenkeeper.io/spmeesseman/svn-scm-ext.svg)](https://greenkeeper.io/)
-[![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/svn-scm?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/spmeesseman.svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=2&branchName=master)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/spmeesseman/svn-scm-ext/badge.svg)](https://snyk.io/test/github/spmeesseman/svn-scm-ext)
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/spmeesseman/svn-scm-ext.svg)](https://isitmaintained.com/project/spmeesseman/svn-scm-ext "Average time to resolve an issue")
