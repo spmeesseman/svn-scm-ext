@@ -3,7 +3,7 @@
     "displayName": "SVN-EXT",
     "description": "Extended functionality for svn-scm",
     "publisher": "spmeesseman",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "images/subversion.png",
     "engines": {
         "vscode": "^1.26.0"
@@ -189,7 +189,7 @@
             {
                 "path": "@semantic-release/github",
                 "assets": "svn-scm-ext.vsix"
-            } 
+            }
         ],
         "packageVsix": "svn-scm-ext.vsix"
     }

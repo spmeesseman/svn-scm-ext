@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.0...v1.0.1) (2019-03-20)
+
 # 1.0.0 (2019-03-20)
 
 ## [0.0.18](https://github.com/spmeesseman/svn-scm-ext/compare/v0.0.17...v0.0.18) (2019-03-20)
