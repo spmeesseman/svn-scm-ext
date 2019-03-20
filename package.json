@@ -67,7 +67,7 @@
         "glob": "^7.1.2",
         "iconv-lite": "^0.4.23",
         "istanbul": "^0.4.5",
-        "jschardet": "^1.6.0",
+        "jschardet": "^2.1.0",
         "mocha": "^6.0.2",
         "mocha-junit-reporter": "^1.18.0",
         "prettier": "^1.16.4",
