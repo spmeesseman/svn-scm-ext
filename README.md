@@ -15,7 +15,7 @@
 [![codecov](https://codecov.io/gh/spmeesseman/svn-scm-ext/branch/master/graph/badge.svg)](https://codecov.io/gh/spmeesseman/svn-scm-ext)
 -->
 <!--
-[![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=1&branchName=master)-->
+[![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=1&branchName=master) [![Greenkeeper badge](https://badges.greenkeeper.io/spmeesseman/svn-scm-ext.svg)](https://greenkeeper.io/)-->
 
 ## Description
 
