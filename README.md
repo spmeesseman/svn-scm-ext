@@ -22,6 +22,7 @@
 > This extension (as of now) is simply a dumb extension that adds some of the svn-scm registered Visual Studio Code commands to the File Explorer and Editor context menus.
 
 ## Prerequisites
+
 > **Note**: This extension extends functionality of Visual Studio Code's svn-scm extension.  Install the svn-scm extension first.
 
 ## Credits
