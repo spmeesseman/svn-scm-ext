@@ -8,6 +8,7 @@
 [![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/spmeesseman.svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=2&branchName=master)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/spmeesseman/svn-scm-ext/badge.svg)](https://snyk.io/test/github/spmeesseman/svn-scm-ext)
+[![codecov](https://codecov.io/gh/spmeesseman/svn-scm-ext/branch/master/graph/badge.svg)](https://codecov.io/gh/spmeesseman/svn-scm-ext)
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/spmeesseman/svn-scm-ext.svg)](https://isitmaintained.com/project/spmeesseman/svn-scm-ext "Average time to resolve an issue")
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/spmeesseman/svn-scm-ext.svg)](https://isitmaintained.com/project/spmeesseman/svn-scm-ext "Percentage of issues still open")
 [![Dependencies Status](https://david-dm.org/spmeesseman/svn-scm-ext/status.svg)](https://david-dm.org/spmeesseman/svn-scm-ext)
