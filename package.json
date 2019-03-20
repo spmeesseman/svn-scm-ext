@@ -1,0 +1,162 @@
+{
+	"name": "svn-scm-ext",
+	"displayName": "SVN-EXT",
+	"description": "Extended functionality for svn-scm",
+	"publisher": "spmeesseman",
+	"version": "0.0.18",
+	"icon": "images/subversion.png",
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"homepage": "https://github.com/spmeesseman/svn-scm-ext/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/spmeesseman/svn-scm-ext.git"
+	},
+	"bugs": {
+		"url": "https://github.com/spmeesseman/svn-scm-ext/issues"
+	},
+	"categories": [
+		"Other",
+		"SCM Providers"
+	],
+	"keywords": [
+		"multi-root ready",
+		"scm",
+		"svn",
+		"subversion"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"publish": "vsce publish",
+		"vscode:prepublish": "npm run lint && npm run compile",
+		"compile": "tsc -p ./",
+		"semantic-release": "semantic-release --no-ci",
+		"semantic-release-dry": "semantic-release --dry-run",
+		"watch": "tsc -watch -p ./",
+		"commit": "npx git-cz",
+		"lint": "npx tslint -p ./",
+		"lint:fix": "npx tslint --fix -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test",
+		"style-check": "npx prettylint src/**/*.ts"
+	},
+	"dependencies": {
+		"is-utf8": "^0.2.1",
+		"minimatch": "^3.0.4",
+		"semver": "^5.6.0",
+		"tmp": "0.0.33"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/istanbul": "^0.4.30",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^11.11.3",
+		"@types/semver": "^5.5.0",
+		"@types/tmp": "0.0.34",
+		"@types/xml2js": "^0.4.3",
+		"@semantic-release/changelog": "^3.0.2",
+		"@semantic-release/git": "^7.0.8",
+		"codecov": "^3.2.0",
+		"commitizen": "^3.0.7",
+		"cz-conventional-changelog": "^2.1.0",
+		"decache": "^4.5.1",
+		"glob": "^7.1.2",
+		"iconv-lite": "^0.4.23",
+		"istanbul": "^0.4.5",
+		"jschardet": "^1.6.0",
+		"mocha": "^6.0.2",
+		"mocha-junit-reporter": "^1.18.0",
+		"prettier": "^1.16.4",
+		"prettylint": "^1.0.0",
+		"remap-istanbul": "^0.13.0",
+		"semantic-release": "^15.13.3",
+		"semantic-release-vsce": "^2.2.6",
+		"tslint": "^5.14.0",
+		"typescript": "^3.2.4",
+		"vscode": "^1.1.30"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "svnext.about",
+				"category": "SVN-EXT",
+				"title": "About"
+			}
+		],
+		"configuration": {
+			"title": "Svn Ext",
+			"properties": {
+				"svnext.enabled": {
+					"type": "boolean",
+					"description": "Whether svnext is enabled",
+					"default": true
+				}
+			}
+		},
+		"menus": {
+			"editor/context": [
+				{
+					"command": "svn.commit",
+					"group": "9_svnext",
+					"when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && resourceScheme == file && svnActiveEditorHasChanges"
+				},
+				{
+					"command": "svn.openChangeHead",
+					"group": "9_svnext",
+					"when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "svn.commit",
+					"group": "9_svn",
+					"when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && svnActiveEditorHasChanges && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+				},
+				{
+					"command": "svn.openChangeHead",
+					"group": "9_svn",
+					"when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+				}
+			]
+		}
+	},
+	"release": {
+		"verifyConditions": [
+			"@semantic-release/github",
+			"@semantic-release/git",
+			"@semantic-release/changelog",
+			"semantic-release-vsce"
+		],
+		"prepare": [
+			"@semantic-release/npm",
+			"@semantic-release/changelog",
+			{
+				"path": "@semantic-release/git",
+				"assets": [
+					"CHANGELOG.md",
+					"package.json",
+					"package-lock.json"
+				],
+				"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+			},
+			"semantic-release-vsce"
+		],
+		"publish": [
+			"semantic-release-vsce",
+			{
+				"path": "@semantic-release/github",
+				"assets": "svn-scm-ext.vsix"
+			}
+		],
+		"packageVsix": "svn-scm-ext.vsix"
+	}
+}
