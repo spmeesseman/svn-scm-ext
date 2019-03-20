@@ -6,5 +6,5 @@
   "ignorePatterns": ["**/node_modules/**", "test/**"],
   "includePid": false,
   "reports": ["json", "lcov", "cobertura"],
-  "verbose": false
+  "verbose": true
 }
