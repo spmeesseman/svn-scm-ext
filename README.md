@@ -4,18 +4,13 @@
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/spmeesseman.svn-scm-ext.svg)](https://marketplace.visualstudio.com/items?itemName=spmeesseman.svn-scm-ext)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/spmeesseman.svn-scm-ext.svg)](https://marketplace.visualstudio.com/items?itemName=spmeesseman.svn-scm-ext)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/svn-scm-ext/Lobby)
+[![Greenkeeper badge](https://badges.greenkeeper.io/spmeesseman/svn-scm-ext.svg)](https://greenkeeper.io/)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/spmeesseman/svn-scm-ext/badge.svg)](https://snyk.io/test/github/spmeesseman/svn-scm-ext)
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/spmeesseman/svn-scm-ext.svg)](https://isitmaintained.com/project/spmeesseman/svn-scm-ext "Average time to resolve an issue")
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/spmeesseman/svn-scm-ext.svg)](https://isitmaintained.com/project/spmeesseman/svn-scm-ext "Percentage of issues still open")
 [![Dependencies Status](https://david-dm.org/spmeesseman/svn-scm-ext/status.svg)](https://david-dm.org/spmeesseman/svn-scm-ext)
 [![DevDependencies Status](https://david-dm.org/spmeesseman/svn-scm-ext/dev-status.svg)](https://david-dm.org/spmeesseman/svn-scm-ext?type=dev)
-<!--
-[![codecov](https://codecov.io/gh/spmeesseman/svn-scm-ext/branch/master/graph/badge.svg)](https://codecov.io/gh/spmeesseman/svn-scm-ext)
--->
-<!--
-[![Build Status](https://dev.azure.com/spmeesseman/svn-scm-ext/_apis/build/status/svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/svn-scm-ext/_build/latest?definitionId=1&branchName=master) [![Greenkeeper badge](https://badges.greenkeeper.io/spmeesseman/svn-scm-ext.svg)](https://greenkeeper.io/)-->
 
 ## Description
 
