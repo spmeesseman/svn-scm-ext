@@ -32,7 +32,7 @@ Over time commands will be added to the UI interfaces that I miss having from a 
 
 ## Next Up
 
-Compare selected to specific revision - window to select revision to compare with local
+Compare selected to specific revision with pop-up window to select revision to compare with local
 
 ## Feedback & Contributing
 
