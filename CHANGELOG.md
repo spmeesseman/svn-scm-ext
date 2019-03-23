@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.3...v1.0.4) (2019-03-23)
+
+
+### Bug Fixes
+
+* trigger ci build ([60b4670](https://github.com/spmeesseman/svn-scm-ext/commit/60b4670))
+
 ## [1.0.3](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.2...v1.0.3) (2019-03-20)
 
 ## [1.0.2](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.1...v1.0.2) (2019-03-20)
