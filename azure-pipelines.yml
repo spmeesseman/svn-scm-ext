@@ -227,4 +227,4 @@ jobs:
           GIT_AUTHOR_EMAIL: $(gitEmail)
           GIT_COMMITTER_EMAIL: $(gitEmail)
           GIT_AUTHOR_NAME: $(gitName)
-          GIT_COMMITTER_NAME: $(gitName) 
+          GIT_COMMITTER_NAME: $(gitName)
