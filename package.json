@@ -3,20 +3,17 @@
     "displayName": "SVN-EXT",
     "description": "Extended functionality for svn-scm",
     "publisher": "spmeesseman",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "icon": "images/subversion.png",
-    "engines":
-    {
+    "engines": {
         "vscode": "^1.26.0"
     },
     "homepage": "https://github.com/spmeesseman/svn-scm-ext/blob/master/README.md",
-    "repository":
-    {
+    "repository": {
         "type": "git",
         "url": "https://github.com/spmeesseman/svn-scm-ext.git"
     },
-    "bugs":
-    {
+    "bugs": {
         "url": "https://github.com/spmeesseman/svn-scm-ext/issues"
     },
     "categories": [
@@ -33,8 +30,7 @@
         "*"
     ],
     "main": "./out/extension.js",
-    "scripts":
-    {
+    "scripts": {
         "publish": "vsce publish",
         "vscode:prepublish": "npm run lint && npm run build",
         "build": "npx tsc -p ./",
@@ -49,15 +45,13 @@
         "test": "node ./node_modules/vscode/bin/test",
         "style-check": "npx prettylint src/**/*.ts"
     },
-    "dependencies":
-    {
+    "dependencies": {
         "is-utf8": "^0.2.1",
         "minimatch": "^3.0.4",
         "semver": "^6.0.0",
         "tmp": "0.1.0"
     },
-    "devDependencies":
-    {
+    "devDependencies": {
         "@types/glob": "^7.1.1",
         "@types/istanbul": "^0.4.30",
         "@types/mocha": "^5.2.6",
@@ -86,83 +80,78 @@
         "typescript": "^3.2.4",
         "vscode": "^1.1.30"
     },
-    "config":
-    {
-        "commitizen":
-        {
+    "config": {
+        "commitizen": {
             "path": "cz-conventional-changelog"
         }
     },
-    "contributes":
-    {
+    "contributes": {
         "commands": [
-        {
-            "command": "svnext.about",
-            "category": "SVN-EXT",
-            "title": "About"
-        }],
-        "configuration":
-        {
-            "title": "Svn Ext",
-            "properties":
             {
-                "svnext.enabled":
-                {
+                "command": "svnext.about",
+                "category": "SVN-EXT",
+                "title": "About"
+            }
+        ],
+        "configuration": {
+            "title": "Svn Ext",
+            "properties": {
+                "svnext.enabled": {
                     "type": "boolean",
                     "description": "Whether svnext is enabled",
                     "default": true
                 }
             }
         },
-        "menus":
-        {
+        "menus": {
             "editor/context": [
-            {
-                "command": "svn.commit",
-                "group": "9_svnext",
-                "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && resourceScheme == file && svnActiveEditorHasChanges"
-            },
-            {
-                "command": "svn.openChangeHead",
-                "group": "9_svnext",
-                "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
-            }],
+                {
+                    "command": "svn.commit",
+                    "group": "9_svnext",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && resourceScheme == file && svnActiveEditorHasChanges"
+                },
+                {
+                    "command": "svn.openChangeHead",
+                    "group": "9_svnext",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
+                }
+            ],
             "explorer/context": [
-            {
-                "command": "svn.commit",
-                "group": "9_svn",
-                "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && svnActiveEditorHasChanges && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-            },
-            {
-                "command": "svn.openChangeHead",
-                "group": "9_svn",
-                "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-            }]
+                {
+                    "command": "svn.commit",
+                    "group": "9_svn",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && svnActiveEditorHasChanges && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+                },
+                {
+                    "command": "svn.openChangeHead",
+                    "group": "9_svn",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+                }
+            ]
         }
     },
-    "release":
-    {
+    "release": {
         "plugins": [
             [
                 "@semantic-release/commit-analyzer",
                 {
                     "preset": "angular",
                     "releaseRules": [
-                    {
-                        "type": "docs",
-                        "scope": "readme",
-                        "release": "patch"
-                    },
-                    {
-                        "type": "refactor",
-                        "release": "patch"
-                    },
-                    {
-                        "type": "style",
-                        "release": "patch"
-                    }],
-                    "parserOpts":
-                    {
+                        {
+                            "type": "docs",
+                            "scope": "readme",
+                            "release": "patch"
+                        },
+                        {
+                            "type": "refactor",
+                            "release": "patch"
+                        },
+                        {
+                            "type": "style",
+                            "release": "patch"
+                        }
+                    ],
+                    "parserOpts": {
                         "noteKeywords": [
                             "BREAKING CHANGE",
                             "BREAKING CHANGES"
