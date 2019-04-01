@@ -3,7 +3,7 @@
     "displayName": "SVN-EXT",
     "description": "Extended functionality for svn-scm",
     "publisher": "spmeesseman",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "icon": "images/subversion.png",
     "engines": {
         "vscode": "^1.26.0"

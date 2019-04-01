@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.8...v1.0.9) (2019-04-01)
+
+
+### Bug Fixes
+
+* pin @types/node to 11.12.2 ([6c26a48](https://github.com/spmeesseman/svn-scm-ext/commit/6c26a48))
+
 ## [1.0.8](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.7...v1.0.8) (2019-03-27)
 
 ## [1.0.7](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.6...v1.0.7) (2019-03-23)
