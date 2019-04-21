@@ -30,6 +30,11 @@
         "*"
     ],
     "main": "./out/extension.js",
+    "files": [
+        "images",
+        "src/*.js",
+        "src/common/*.js"
+	],
     "scripts": {
         "publish": "vsce publish",
         "vscode:prepublish": "npm run lint && npm run build",
