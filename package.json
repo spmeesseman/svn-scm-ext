@@ -3,7 +3,7 @@
     "displayName": "SVN-EXT",
     "description": "Extended functionality for svn-scm",
     "publisher": "spmeesseman",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "icon": "images/subversion.png",
     "engines": {
         "vscode": "^1.26.0"
@@ -34,7 +34,7 @@
         "images",
         "src/*.js",
         "src/common/*.js"
-	],
+    ],
     "scripts": {
         "publish": "vsce publish",
         "vscode:prepublish": "npm run lint && npm run build",
