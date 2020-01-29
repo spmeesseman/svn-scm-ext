@@ -59,7 +59,7 @@
     "devDependencies": {
         "@types/glob": "^7.1.1",
         "@types/istanbul": "^0.4.30",
-        "@types/mocha": "^5.2.6",
+        "@types/mocha": "^7.0.0",
         "@types/node": "11.12.2",
         "@types/semver": "^6.0.0",
         "@types/tmp": "0.0.34",
