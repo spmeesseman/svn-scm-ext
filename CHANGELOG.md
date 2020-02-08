@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.12...v1.1.0) (2020-02-08)
+
+
+### Features
+
+* add support for viewing a file's svn history from  the explorer or editor context menus ([6f057e1](https://github.com/spmeesseman/svn-scm-ext/commit/6f057e1d51526e114ffc0569299155f73e1133f4))
+
 ## [1.0.12](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.11...v1.0.12) (2019-04-28)
 
 ## [1.0.11](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.10...v1.0.11) (2019-04-21)
