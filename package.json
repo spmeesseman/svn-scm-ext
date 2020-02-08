@@ -54,36 +54,37 @@
         "is-utf8": "^0.2.1",
         "minimatch": "^3.0.4",
         "semver": "^6.0.0",
-        "tmp": "0.1.0"
+        "tmp": "0.1.0",
+        "xml2js": "^0.4.23"
     },
     "devDependencies": {
+        "@semantic-release/changelog": "^3.0.6",
+        "@semantic-release/git": "^7.0.18",
         "@types/glob": "^7.1.1",
         "@types/istanbul": "^0.4.30",
-        "@types/mocha": "^5.2.6",
+        "@types/mocha": "^5.2.7",
         "@types/node": "11.12.2",
         "@types/semver": "^6.0.0",
         "@types/tmp": "0.0.34",
-        "@types/xml2js": "^0.4.3",
-        "@semantic-release/changelog": "^3.0.2",
-        "@semantic-release/git": "^7.0.8",
-        "codecov": "^3.2.0",
-        "commitizen": "^3.0.7",
+        "@types/xml2js": "^0.4.5",
+        "codecov": "^3.6.5",
+        "commitizen": "^3.1.2",
         "cz-conventional-changelog": "^2.1.0",
         "decache": "^4.5.1",
-        "glob": "^7.1.2",
+        "glob": "^7.1.6",
         "iconv-lite": "^0.4.23",
         "istanbul": "^0.4.5",
         "jschardet": "^2.1.0",
-        "mocha": "^6.0.2",
-        "mocha-junit-reporter": "^1.18.0",
-        "prettier": "^1.16.4",
+        "mocha": "^6.2.2",
+        "mocha-junit-reporter": "^1.23.3",
+        "prettier": "^1.19.1",
         "prettylint": "^1.0.0",
         "remap-istanbul": "^0.13.0",
-        "semantic-release": "^15.13.3",
-        "semantic-release-vsce": "^2.2.6",
-        "tslint": "^5.14.0",
-        "typescript": "^3.2.4",
-        "vscode": "^1.1.30"
+        "semantic-release": "^15.14.0",
+        "semantic-release-vsce": "^2.2.8",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.5",
+        "vscode": "^1.1.36"
     },
     "config": {
         "commitizen": {
@@ -93,9 +94,9 @@
     "contributes": {
         "commands": [
             {
-                "command": "svnext.about",
+                "command": "svnext.openHistory",
                 "category": "SVN-EXT",
-                "title": "About"
+                "title": "Open History"
             }
         ],
         "configuration": {
@@ -119,6 +120,11 @@
                     "command": "svn.openChangeHead",
                     "group": "9_svnext",
                     "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
+                },
+                {
+                    "command": "svnext.openHistory",
+                    "group": "9_svn",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
                 }
             ],
             "explorer/context": [
@@ -129,6 +135,11 @@
                 },
                 {
                     "command": "svn.openChangeHead",
+                    "group": "9_svn",
+                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+                },
+                {
+                    "command": "svnext.openHistory",
                     "group": "9_svn",
                     "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
                 }
