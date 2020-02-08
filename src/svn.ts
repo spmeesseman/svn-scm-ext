@@ -22,11 +22,22 @@ export class Svn implements Disposable
     }
 
 
+    private getCwd(uri: Uri): string
+    {
+        let dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("\\") + 1);
+        if (process.platform !== 'win32') {
+			dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("/") + 1);
+        }
+        return dir;
+    }
+
+
     public getRepoPath(uri: Uri): Promise<string>
     {
+        let dir = this.getCwd(uri);
         return new Promise<string>((resolve, reject) =>
         {
-            this.runSvn(uri, "info --show-item url")
+            this.runSvn("info --show-item url", dir)
             .then(out => resolve(out.trim()))
             .catch(out => reject(out.trim())); 
         });
@@ -37,10 +48,7 @@ export class Svn implements Disposable
     {
         const ctx = this.extensionContext;
         const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
-        let dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("\\") + 1);
-        if (process.platform !== 'win32') {
-			dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("/") + 1);
-        }
+        let dir = this.getCwd(uri);
         
         // const repoPath = await this.getRepoPath(uri) + "/" + fileName;
 
