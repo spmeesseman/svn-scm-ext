@@ -12,6 +12,7 @@ export class HistoryPanel
     private _content: string;
     private _title: string;
     private _uri?: vscode.Uri | undefined;
+	//private const tabs: Map<string, HistoryPanel> = new Map();
 
     public static createOrShow(extensionPath: string, title: string, content: string, uri: vscode.Uri) 
     {
