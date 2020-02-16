@@ -124,7 +124,7 @@
                 {
                     "command": "svnext.openHistory",
                     "group": "9_svn",
-                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
+                    "when": "config.svnext.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
                 }
             ],
             "explorer/context": [
@@ -141,7 +141,7 @@
                 {
                     "command": "svnext.openHistory",
                     "group": "9_svn",
-                    "when": "config.svnext.enabled && config.svn.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+                    "when": "config.svnext.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
                 }
             ]
         }

@@ -14,7 +14,7 @@ export class HistoryPanel
     private _uri?: vscode.Uri | undefined;
 	//private const tabs: Map<string, HistoryPanel> = new Map();
 
-    public static createOrShow(extensionPath: string, title: string, content: string, uri: vscode.Uri) 
+    public static createOrShow(extensionPath: string, title: string, content: string, uri: vscode.Uri, enableScripts?: boolean) 
     {
 		const column = vscode.window.activeTextEditor
 			           ? vscode.window.activeTextEditor.viewColumn : undefined;
@@ -32,7 +32,7 @@ export class HistoryPanel
 			title,
 			column || vscode.ViewColumn.One,
 			{
-				enableScripts: false,
+				enableScripts,
 				localResourceRoots: [vscode.Uri.file(path.join(extensionPath, 'res'))]
 			}
 		);
