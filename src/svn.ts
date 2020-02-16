@@ -2,6 +2,8 @@ import {
     ExtensionContext, Disposable, Uri
 } from "vscode";
 import * as child_process from "child_process";
+import { getCwd } from './common/util';
+
 
 export class Svn implements Disposable
 {
@@ -12,19 +14,9 @@ export class Svn implements Disposable
     }
 
 
-    private getCwd(uri: Uri): string
+    public async getRepoPath(uri: Uri): Promise<string>
     {
-        let dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("\\") + 1);
-        if (process.platform !== 'win32') {
-			dir = uri.fsPath.substring(0, uri.fsPath.lastIndexOf("/") + 1);
-        }
-        return dir;
-    }
-
-
-    private getRepoPath(uri: Uri): Promise<string>
-    {
-        let dir = this.getCwd(uri);
+        let dir = getCwd(uri);
         return new Promise<string>((resolve, reject) =>
         {
             this.runSvn("info --show-item url", dir)
@@ -34,10 +26,18 @@ export class Svn implements Disposable
     }
 
 
+    public async getFileByRev(uri: Uri, rev: string)
+    {
+        const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
+        let dir = getCwd(uri);
+        return await this.runSvn("cat -r " + rev + " " + fileName, dir);
+    }
+
+
     public async getHistory(uri: Uri)
     {
         const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
-        let dir = this.getCwd(uri);
+        let dir = getCwd(uri);
         return await this.runSvn("log --xml " + fileName + " --verbose --limit 5", dir);
     }
 

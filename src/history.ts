@@ -14,7 +14,7 @@ export class HistoryPanel
     private _uri?: vscode.Uri | undefined;
 	//private const tabs: Map<string, HistoryPanel> = new Map();
 
-    public static createOrShow(extensionPath: string, title: string, content: string, uri: vscode.Uri, enableScripts?: boolean) 
+    public static createOrShow(extensionPath: string, title: string, content: string, uri: vscode.Uri, listener: (e: any) => any, enableScripts?: boolean) 
     {
 		const column = vscode.window.activeTextEditor
 			           ? vscode.window.activeTextEditor.viewColumn : undefined;
@@ -37,18 +37,18 @@ export class HistoryPanel
 			}
 		);
 
-		HistoryPanel.currentPanel = new HistoryPanel(panel, extensionPath, title, content, uri);
+		HistoryPanel.currentPanel = new HistoryPanel(panel, extensionPath, title, content, listener, uri);
     }
     
 
     public static revive(panel: vscode.WebviewPanel, extensionPath: string) 
     {
         const msg = "Previously requested Subversion history (Close window)";
-		HistoryPanel.currentPanel = new HistoryPanel(panel, extensionPath, "History", msg);
+		HistoryPanel.currentPanel = new HistoryPanel(panel, extensionPath, "History", msg, function(e:any){});
 	}
 
 
-    private constructor(panel: vscode.WebviewPanel, extensionPath: string, title: string, content: string, uri?: vscode.Uri) 
+    private constructor(panel: vscode.WebviewPanel, extensionPath: string, title: string, content: string, listener: (e: any) => any, uri?: vscode.Uri) 
     {
 		this._panel = panel;
 		this._extensionPath = extensionPath;
@@ -76,13 +76,7 @@ export class HistoryPanel
 
 		// Handle messages from the webview
 		this._panel.webview.onDidReceiveMessage(
-			message => {
-				switch (message.command) {
-					case 'alert':
-						vscode.window.showErrorMessage(message.text);
-						return;
-				}
-			},
+			listener,
 			null,
 			this._disposables
 		);

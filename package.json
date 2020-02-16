@@ -94,9 +94,14 @@
     "contributes": {
         "commands": [
             {
+                "command": "svnext.openCompare",
+                "category": "SVN-EXT",
+                "title": "Compare with HEAD"
+            },
+            {
                 "command": "svnext.openHistory",
                 "category": "SVN-EXT",
-                "title": "Open History"
+                "title": "Open SVN History"
             }
         ],
         "configuration": {
@@ -123,7 +128,7 @@
                 },
                 {
                     "command": "svnext.openHistory",
-                    "group": "9_svn",
+                    "group": "9_svnext",
                     "when": "config.svnext.enabled && svnOpenRepositoryCount != 0 && !isInDiffEditor && resourceScheme == file"
                 }
             ],
