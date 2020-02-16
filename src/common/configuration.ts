@@ -10,7 +10,7 @@ import {
   ConfigurationTarget
 } from "vscode";
 
-const taskExplorer = "taskExplorer";
+const extensionName = "svnext";
 
 class Configuration {
   private configuration: WorkspaceConfiguration;
@@ -21,16 +21,16 @@ class Configuration {
   }
 
   constructor() {
-    this.configuration = workspace.getConfiguration(taskExplorer);
+    this.configuration = workspace.getConfiguration(extensionName);
     workspace.onDidChangeConfiguration(this.onConfigurationChanged, this);
   }
 
   private onConfigurationChanged(event: ConfigurationChangeEvent) {
-    if (!event.affectsConfiguration(taskExplorer)) {
+    if (!event.affectsConfiguration(extensionName)) {
       return;
     }
 
-    this.configuration = workspace.getConfiguration(taskExplorer);
+    this.configuration = workspace.getConfiguration(extensionName);
 
     this._onDidChange.fire(event);
   }
