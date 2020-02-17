@@ -50,7 +50,6 @@
         "commit": "npx git-cz",
         "lint": "npx tslint -p ./",
         "lint:fix": "npx tslint --fix -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "rebuild": "npm run clean && npm run build",
         "test": "node ./out/test/runTest.js",
         "test-after": "npm run coverage-full-off",
