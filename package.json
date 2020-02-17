@@ -27,7 +27,7 @@
         "subversion"
     ],
     "activationEvents": [
-        
+        "*"
     ],
     "main": "./out/extension.js",
     "files": [
