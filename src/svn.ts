@@ -2,7 +2,7 @@ import {
     ExtensionContext, Disposable, Uri
 } from "vscode";
 import * as child_process from "child_process";
-import { getCwd } from './common/util';
+import { getCwd, log, logValue } from './util';
 
 
 export class Svn implements Disposable
@@ -44,6 +44,9 @@ export class Svn implements Disposable
 
     private runSvn(cmd: string, cwd: string): Promise<string>
     {
+        log("run svn");
+        logValue("   cmd", cmd, 2);
+
         return new Promise<string>((resolve, reject) =>
         {
             let output = "";

@@ -1,63 +1,83 @@
 /* tslint:disable */
 
-import * as assert from "assert";
+//
+// Documentation on https://mochajs.org/ for help.
+//
+
+import * as assert from 'assert';
 import * as vscode from "vscode";
+import { configuration } from "../common/configuration";
+import { setWriteToConsole, timeout } from '../util';
 
 
-suite("Extension Tests", () =>
+suite("Extension Tests", () => 
 {
-    setup(async () => { });
+    setup(async () => 
+    {
+    });
+
 
     teardown(() =>
     {
-
     });
 
-    test("Get extension", () =>
+
+    test("Enable required testing options", async function()
     {
+        this.timeout(10 * 1000);
         assert.ok(vscode.extensions.getExtension("spmeesseman.svn-scm-ext"));
+        //
+        // Enable views, use workspace level so that running this test from Code itself
+        // in development doesnt trigger the TaskExplorer instance installed in the dev IDE
+        //
+        await configuration.updateWs('enable', true);
+        setWriteToConsole(true); // write debug logging from exiension to console
     });
 
-    //
-    // The extension is already activated by vscode before running mocha test framework.
-    // No need to test activate any more. So commenting this case.
-    //
-    test("Activate extension", function(done)
+
+    test("Get active extension", async function()
     {
-        this.timeout(60 * 1000);
-        const extension = vscode.extensions.getExtension(
-            "spmeesseman.svn-scm-ext"
-        ) as vscode.Extension<any>;
+        let wait = 0;
+        const maxWait = 15;  // seconds
 
-        if (!extension)
-        {
-            assert.fail("Extension not found");
-        }
+        this.timeout(20 * 1000);
 
-        if (!extension.isActive)
+        let ext = vscode.extensions.getExtension("spmeesseman.svn-scm-ext");
+        assert(ext, "Could not find extension");
+
+        //
+        // For coverage, we remove activationEvents "*" in package.json, we should
+        // not be active at this point
+        //
+        if (ext)
         {
-            extension.activate().then(
-                api =>
-                {
-                    console.log("        ✔ Extension activated successfully");
-                    done();
-                },
-                () =>
-                {
+            if (!ext.isActive) 
+            {
+                console.log('        Manually activating extension');
+                try {
+                    await ext.activate();
+                    assert(vscode.commands.executeCommand("svnext.showOutput"));
+                }
+                catch(e) {
                     assert.fail("Failed to activate extension");
                 }
-            );
+            } 
+            else {
+                //
+                // Wait for extension to activate
+                //
+                while (!ext.isActive && wait < maxWait * 10) {
+                    wait += 1;
+                    await timeout(100);
+                }
+                assert(!ext.isActive || wait < maxWait * 10, "Extension did not finish activation within " + maxWait + " seconds");
+                //
+                // Set extension api exports
+                //
+                assert(vscode.commands.executeCommand("svnext.showOutput"));
+            }
         }
-        else
-        {
-            console.log("        ✔ Extension activated successfully");
-            done();
-        }
-    });
-
-    test("Test Subversion routines", function(done)
-    {
-        done();
+        assert(vscode.commands.executeCommand("svnext.showOutput"));
     });
 
 });

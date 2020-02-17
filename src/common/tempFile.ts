@@ -5,7 +5,7 @@ import { writeFileSync, mkdirSync } from "fs";
 import * as crypto from "crypto";
 import { iconv } from "./vscodeModules";
 import { configuration } from "./configuration";
-import { pathExists } from "./util";
+import { pathExists } from "../util";
 
 export const tempdir = path.join(
   os.tmpdir(),

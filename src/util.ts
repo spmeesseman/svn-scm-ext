@@ -1,11 +1,11 @@
 
 import {
-    workspace, RelativePattern, WorkspaceFolder, OutputChannel, ExtensionContext,
+    RelativePattern, WorkspaceFolder, OutputChannel, ExtensionContext,
     commands, window, Uri
 } from "vscode";
 import * as fs from "fs";
 import * as minimatch from "minimatch";
-import { configuration } from "./configuration";
+import { configuration } from "./common/configuration";
 
 
 const logValueWhiteSpace = 40;
@@ -225,7 +225,7 @@ export async function log(msg: string, level?: number)
         return;
     }
 
-    if (workspace.getConfiguration("taskExplorer").get("debug") === true)
+    if (configuration.get("debug") === true)
     {
         if (logOutputChannel && (!level || level <= configuration.get<number>("debugLevel"))) {
             logOutputChannel.appendLine(msg);
@@ -258,7 +258,7 @@ export async function logValue(msg: string, value: any, level?: number)
         logMsg += ": null";
     }
 
-    if (workspace.getConfiguration("taskExplorer").get("debug") === true) {
+    if (configuration.get("debug") === true) {
         if (logOutputChannel && (!level || level <= configuration.get<number>("debugLevel"))) {
             logOutputChannel.appendLine(logMsg);
         }
