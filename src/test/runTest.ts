@@ -10,7 +10,8 @@ async function main()
         await runTests({
             version: process.env.CODE_VERSION,
             extensionDevelopmentPath,
-            extensionTestsPath
+            extensionTestsPath,
+            launchArgs: [extensionTestsPath]
         });
     } catch (err) {
         console.error(`Failed to run tests: ${err}\n${err.stack}`);

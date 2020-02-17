@@ -46,7 +46,7 @@ suite("Util tests", () =>
 
     test("Test camelCase()", () =>
     {
-        assert(util.camelCase("svnext", 4) === 'svnext');
+        assert(util.camelCase("svnext", 3) === 'svnExt');
         assert(util.camelCase(undefined, 4) === undefined);
         assert(util.camelCase("testgreaterindex", 19) === "testgreaterindex");
         assert(util.camelCase("test", -1) === "test");
@@ -54,7 +54,7 @@ suite("Util tests", () =>
 
     test("Test properCase()", () =>
     {
-        assert(util.properCase("svnext") === 'svnext');
+        assert(util.properCase("svnext") === 'Svnext');
         assert(util.properCase(undefined) === undefined);
     });
 

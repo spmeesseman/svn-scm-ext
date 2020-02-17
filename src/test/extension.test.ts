@@ -30,7 +30,7 @@ suite("Extension Tests", () =>
         // Enable views, use workspace level so that running this test from Code itself
         // in development doesnt trigger the TaskExplorer instance installed in the dev IDE
         //
-        await configuration.updateWs('enable', true);
+        await configuration.updateWs('enabled', true);
         setWriteToConsole(true); // write debug logging from exiension to console
     });
 
