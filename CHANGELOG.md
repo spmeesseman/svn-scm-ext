@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/spmeesseman/svn-scm-ext/compare/v1.1.1...v1.2.0) (2020-02-17)
+
+
+### Bug Fixes
+
+* the setting to enable or disable the extension has no effect, 'open history' is always on ([dbeab06](https://github.com/spmeesseman/svn-scm-ext/commit/dbeab06a5fca7e19fac6200ca1420e17c54d3512))
+
+
+### Features
+
+* add support for viewing different diffs for each revision in history page ([aec44ce](https://github.com/spmeesseman/svn-scm-ext/commit/aec44ce56fc416f48d89008bb1efb728984ab19d))
+
 ## [1.1.1](https://github.com/spmeesseman/svn-scm-ext/compare/v1.1.0...v1.1.1) (2020-02-09)
 
 # [1.1.0](https://github.com/spmeesseman/svn-scm-ext/compare/v1.0.12...v1.1.0) (2020-02-08)
