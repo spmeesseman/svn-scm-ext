@@ -5,17 +5,19 @@
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/spmeesseman.svn-scm-ext.svg)](https://marketplace.visualstudio.com/items?itemName=spmeesseman.scm-ext)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/spmeesseman.svn-scm-ext.svg)](https://marketplace.visualstudio.com/items?itemName=spmeesseman.scm-ext)
 [![authors](https://img.shields.io/badge/authors-scott%20meesseman-6F02B5.svg?logo=visual%20studio%20code)](https://www.littlesm.com)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 [![Build Status](https://dev.azure.com/spmeesseman/vscode-svn-scm-ext/_apis/build/status/spmeesseman.svn-scm-ext?branchName=master)](https://dev.azure.com/spmeesseman/vscode-svn-scm-ext/_build/latest?definitionId=4&branchName=master)
 [![codecov](https://codecov.io/gh/spmeesseman/svn-scm-ext/branch/master/graph/badge.svg)](https://codecov.io/gh/spmeesseman/svn-scm-ext)
+[![CodeFactor](https://www.codefactor.io/repository/github/spmeesseman/svn-scm-ext/badge)](https://www.codefactor.io/repository/github/spmeesseman/svn-scm-ext)
 [![Greenkeeper badge](https://badges.greenkeeper.io/spmeesseman/svn-scm-ext.svg)](https://greenkeeper.io/)
 [![GitHub issues open](https://img.shields.io/github/issues-raw/spmeesseman/svn%2dscm%2dext.svg?maxAge=2592000&logo=github)](https://github.com/spmeesseman/svn-scm-ext/issues)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/spmeesseman/svn%2dscm%2dext.svg?maxAge=2592000&logo=github)](https://github.com/spmeesseman/svn-scm-ext/issues)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 - [Subversion Extended Functionality](#subversion-extended-functionality)
   - [Description](#description)
   - [Prerequisites](#prerequisites)
+  - [Screenshots](#screenshots)
   - [Features](#features)
     - [Features by Version](#features-by-version)
   - [Feedback & Contributing](#feedback--contributing)
@@ -29,6 +31,10 @@ Provides some context menu Subversion commands to the File Explorer View and Edi
 ## Prerequisites
 
 Extends some functionality of Visual Studio Code's **johnstoncode.svn-scm** extension.  Install the *svn-scm* extension first in order to use this functionality.
+
+## Screenshots
+
+![ss0](images/svnhistory.png?raw=true)
 
 ## Features
 
