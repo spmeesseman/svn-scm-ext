@@ -30,11 +30,6 @@
         "*"
     ],
     "main": "./out/extension.js",
-    "files": [
-        "images",
-        "src/*.js",
-        "src/common/*.js"
-    ],
     "scripts": {
         "publish": "vsce publish",
         "vscode:prepublish": "npm run lint && npm run build",
@@ -68,10 +63,10 @@
         "@types/mocha": "^5.2.7",
         "@types/node": "11.12.2",
         "@types/semver": "^6.0.0",
-        "@types/tmp": "0.0.34",
         "@types/vscode": "^1.26.0",
         "@types/xml2js": "^0.4.5",
         "codecov": "^3.6.5",
+        "conventional-changelog-spm": "^1.2.3",
         "cz-conventional-changelog": "^2.1.0",
         "decache": "^4.5.1",
         "glob": "^7.1.6",
@@ -92,10 +87,10 @@
         "typescript": "^3.7.5",
         "vscode-test": "^1.3.0"
     },
-    "config": {
-        "commitizen": {
-            "path": "cz-conventional-changelog"
-        }
+    "greenkeeper": {
+        "ignore": [
+            "@types/node"
+        ]
     },
     "contributes": {
         "commands": [
@@ -171,69 +166,5 @@
                 }
             ]
         }
-    },
-    "release": {
-        "plugins": [
-            [
-                "@semantic-release/commit-analyzer",
-                {
-                    "preset": "angular",
-                    "releaseRules": [
-                        {
-                            "type": "docs",
-                            "scope": "readme",
-                            "release": "patch"
-                        },
-                        {
-                            "type": "refactor",
-                            "release": "patch"
-                        },
-                        {
-                            "type": "style",
-                            "release": "patch"
-                        }
-                    ],
-                    "parserOpts": {
-                        "noteKeywords": [
-                            "BREAKING CHANGE",
-                            "BREAKING CHANGES"
-                        ]
-                    }
-                }
-            ],
-            "@semantic-release/release-notes-generator",
-            "@semantic-release/changelog",
-            "@semantic-release/npm",
-            "@semantic-release/github",
-            "@semantic-release/git"
-        ],
-        "verifyConditions": [
-            "@semantic-release/github",
-            "@semantic-release/git",
-            "@semantic-release/changelog",
-            "semantic-release-vsce"
-        ],
-        "prepare": [
-            "@semantic-release/npm",
-            "@semantic-release/changelog",
-            {
-                "path": "@semantic-release/git",
-                "assets": [
-                    "CHANGELOG.md",
-                    "package.json",
-                    "package-lock.json"
-                ],
-                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-            },
-            "semantic-release-vsce"
-        ],
-        "publish": [
-            "semantic-release-vsce",
-            {
-                "path": "@semantic-release/github",
-                "assets": "svn-scm-ext.vsix"
-            }
-        ],
-        "packageVsix": "svn-scm-ext.vsix"
     }
 }
