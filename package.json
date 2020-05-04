@@ -67,7 +67,7 @@
         "@types/xml2js": "^0.4.5",
         "codecov": "^3.6.5",
         "conventional-changelog-spm": "^1.2.3",
-        "cz-conventional-changelog": "^2.1.0",
+        "cz-conventional-changelog": "^3.2.0",
         "decache": "^4.5.1",
         "glob": "^7.1.6",
         "iconv-lite": "^0.4.23",
