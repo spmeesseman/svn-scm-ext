@@ -85,7 +85,7 @@
         "source-map-support": "^0.5.16",
         "tslint": "^5.20.1",
         "typescript": "^3.7.5",
-        "vscode-test": "^1.3.0"
+        "vscode-test": "^1.4.0"
     },
     "greenkeeper": {
         "ignore": [
