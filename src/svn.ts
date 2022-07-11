@@ -38,7 +38,7 @@ export class Svn implements Disposable
     {
         const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
         let dir = getCwd(uri);
-        return await this.runSvn("log --xml " + fileName + " --verbose --limit 5", dir);
+        return await this.runSvn("log --xml " + fileName + " --verbose", dir);
     }
 
 
