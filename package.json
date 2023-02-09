@@ -127,6 +127,11 @@
                     ],
                     "default": 1,
                     "description": "Logging level"
+                },
+                "svnext.logHistoryLimit": {
+                    "type": "number",
+                    "default": 5,
+                    "description": "# of recent logs showed in [Open History], set <=0 to show all histories"
                 }
             }
         },

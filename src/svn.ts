@@ -2,6 +2,7 @@ import {
     ExtensionContext, Disposable, Uri
 } from "vscode";
 import * as child_process from "child_process";
+import { configuration } from "./common/configuration";
 import { getCwd, log, logValue } from './util';
 
 
@@ -16,7 +17,7 @@ export class Svn implements Disposable
 
     public async getRepoPath(uri: Uri): Promise<string>
     {
-        let dir = getCwd(uri);
+        const dir = getCwd(uri);
         return new Promise<string>((resolve, reject) =>
         {
             this.runSvn("info --show-item url", dir)
@@ -29,7 +30,7 @@ export class Svn implements Disposable
     public async getFileByRev(uri: Uri, rev: string)
     {
         const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
-        let dir = getCwd(uri);
+        const dir = getCwd(uri);
         return await this.runSvn("cat -r " + rev + " " + fileName, dir);
     }
 
@@ -37,8 +38,11 @@ export class Svn implements Disposable
     public async getHistory(uri: Uri)
     {
         const fileName = uri.path.substring(uri.path.lastIndexOf("/") + 1);
-        let dir = getCwd(uri);
-        return await this.runSvn("log --xml " + fileName + " --verbose --limit 5", dir);
+        const dir = getCwd(uri);
+        let limit = configuration.get<number>("logHistoryLimit");
+        limit = limit <0 ? 0 : limit
+        const limitParam = limit === 0 ? '' : ` --limit ${limit}`
+        return await this.runSvn("log --xml " + fileName + " --verbose" + limitParam, dir);
     }
 
 
@@ -79,7 +83,7 @@ export class Svn implements Disposable
                 output += data;
             });
 
-            child.on("exit", code => {
+            child.on("exit", () => {
                 resolve(output);
             });
         });
